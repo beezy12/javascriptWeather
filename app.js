@@ -52,6 +52,8 @@
           // debugger
           return element
 
+
+          // ***** so .map just makes a new array but doesn't apply the newly made li's to the ul.... so that's what's going on here.
       }).forEach((element) => list.appendChild(element))
     })
   }
