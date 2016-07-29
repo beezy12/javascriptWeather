@@ -13,7 +13,12 @@
   // q s the query
   const searchWeather = (city) => {
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${appId}`)
-    .then()
+
+    .then((res) => res.json())
+
+    .then((results) => {
+      debugger
+    })
   }
 
 
