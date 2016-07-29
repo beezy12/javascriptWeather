@@ -17,7 +17,37 @@
     .then((res) => res.json())
 
     .then((results) => {
-      debugger
+
+      // either use this console.log or just type 'results' into dev tools to look at data
+      console.log('results: ', results)
+
+      // for(let i = 0; i < results.list.length; i++) {
+      results.list.map((data) => {
+
+
+          const humidity = results.list[0].main.humidity + '%'
+
+          // makes a list item, takes that and adds the 'weather-list-item' class *****
+          const element = document.createElement('li')
+          element.classList.add('weather-list-item')
+
+          // add the li to the HTML as humidity
+          element.innerHTML = humidity
+
+
+          // allows us to move elements inside other elements
+          // this adds the humidity li to the list ul
+          list.appendChild(element)
+
+          // can modify CSS here....
+          element.style.height = humidity
+
+
+
+          // debugger}
+      })
+
+
     })
   }
 
