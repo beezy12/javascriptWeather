@@ -59,13 +59,36 @@
   }
 
 
-  btn.addEventListener('click', () => {
+  // btn.addEventListener('click', () => {
 
-    // Search weather for starting input value
-    searchWeather(input.value)
+  //   console.log('heard the click')
+
+  //   // Search weather for starting input value
+  //   searchWeather(input.value)
+  // })
+
+
+  document.getElementById('searchButton').addEventListener('keyup', function(event) {
+
+    console.log('enter button')
+
+    if(event.keyCode == 13) {
+      // Search weather for starting input value
+      searchWeather(input.value)
+    }
+
   })
 
+  // btn.addEventListener('keydown', (e) => {
+  //   console.log('heard that enter button')
+  //   event.preventDefault();
+  //   if(e.keyCode === 13) {
+  //     searchWeather(input.value)
+  //   }
+  // })
 
+
+  // this is the default city that will be searched when the page loads
   searchWeather('Nashville')
 
 
