@@ -27,11 +27,11 @@
 
 
 
-      for(let i = 0; i < results.list.length; i++) {
-      // results.list.map(() => {
+      // for(let i = 0; i < results.list.length; i++) {
+      results.list.map((weather) => {
 
           // gets the humidity % and applies it to the humditiy variable
-          const humidity = results.list[i].main.humidity + '%'
+          const humidity = weather.main.humidity + '%'
 
           // makes a list item, takes that and adds the 'weather-list-item' class *****
           const element = document.createElement('li')
@@ -43,15 +43,16 @@
 
           // allows us to move elements inside other elements
           // this adds the humidity li to the list ul
-          list.appendChild(element)
+
+          // list.appendChild(element)
 
           // can modify CSS here....
           element.style.height = humidity
 
-          // debugger}
-      }
+          // debugger
+          return element
 
-
+      }).forEach((element) => list.appendChild(element))
     })
   }
 
